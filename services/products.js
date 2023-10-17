@@ -10,7 +10,7 @@ const updateProduct = async (call, callback) => {
           const { id, description } = call.request
 
           // realizando operacion del microservicio
-          await pool.query('UPDATE product SET descrip = $1 WHERE id = $2', [description, id])
+          await pool.query('UPDATE product SET description = $1 WHERE id = $2', [description, id])
 
      } catch (err) {
           success = false
@@ -18,8 +18,7 @@ const updateProduct = async (call, callback) => {
 
      } finally {
           // enviando respuesta
-          callback(null, { success, id })
-
+          callback(null, { success })
      }
 }
 

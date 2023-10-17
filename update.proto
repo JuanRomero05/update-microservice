@@ -13,5 +13,4 @@ message ProductParam {
 
 message Result {
     bool success = 1;
-    int32 id = 2;
 }
