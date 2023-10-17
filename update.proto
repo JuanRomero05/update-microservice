@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package updateProductPackage;
+
+service Update {
+    rpc updateProduct(ProductParam) returns (Result) {}
+}
+
+message ProductParam {
+    string description = 1;
+    int32 id = 2;
+}
+
+message Result {
+    bool success = 1;
+    int32 id = 2;
+}
