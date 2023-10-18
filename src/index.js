@@ -5,7 +5,9 @@ const server = require('./config/server.js')
 
 // las credenciales son obligatorias para iniciar el servidor, en este caso, se optara por no tener credenciales seguras
 const credentials = ServerCredentials.createInsecure()
+const port = process.env.PORT
 
-server.bindAsync(`localhost:${process.env.PORT}`, credentials, () => {
+server.bindAsync(`localhost:${port}`, credentials, () => {
      server.start()
+     console.log(`Puerto ${port}`)
 })
